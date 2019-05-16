@@ -43,7 +43,7 @@
 1.  以Mind Studio安装用户进入facedetectionapp应用代码所在根目录，如_/home/ascend/sample-facedetection_。
 2.  <a name="zh-cn_topic_0167071573_li08019112542"></a>执行部署脚本，进行工程环境准备，包括ascenddk公共库的编译与部署、网络模型的下载、Presenter Server服务器的配置等操作。
 
-    **bash deploy.sh**_ __host\_ip_ _model\_mode_
+    **bash deploy.sh** _host\_ip_ _model\_mode_
 
     -   _host\_ip_：Atlas 200 DK开发者板的IP地址。
     -   model\_mode代表模型文件及依赖软件的部署方式，默认为internet。
@@ -90,7 +90,7 @@
 
     **bash run\_facedetectionapp.sh** _host\_ip_ _presenter\_view\_app\_name  camera\_channel\_name_   &
 
-    -   _host\_ip：_对于Atlas 200 DK开发者板，即为开发者板的IP地址。
+    -   _host\_ip_:对于Atlas 200 DK开发者板，即为开发者板的IP地址。
     -   _presenter\_view\_app\_name_：用户自定义的在PresenterServer界面展示的View Name。
     -   _camera\_channel\_name_：摄像头所属Channel，取值为“Channel-1“或者“Channel-2“，查询摄像头所属Channel的方法请参考[Atlas 200 DK使用指南](https://www.huawei.com/minisite/ascend/cn/filedetail_2.html)。
 
@@ -121,7 +121,7 @@
 
     **bash stop\_facedetectionapp.sh** _host\_ip_
 
-    _host\_ip：_对于Atlas 200 DK开发者板，即为开发者板的IP地址。。
+    _host\_ip_：对于Atlas 200 DK开发者板，即为开发者板的IP地址。。
 
     命令示例：
 
