@@ -44,15 +44,22 @@ data_source=$3
 
 function kill_remote_running()
 {
-    echo -e "\nrun.sh exit, kill ${remote_host}:ascend_facedetectionapp running..."
+    echo -e "run.sh exit, kill ${remote_host}:ascend_facedetectionapp running..."
     parse_remote_port
+	iRet=$(IDE-daemon-client --host ${remote_host}:${remote_port} --hostcmd "kill \$(pidof ~/HIAI_PROJECTS/ascend_workspace/facedetectionapp/out/ascend_facedetectionapp)")
+	if [[ $? -eq 0 ]];then
+		echo "$iRet in ${remote_host}."
+		return 0
+	fi
+
     iRet=$(IDE-daemon-client --host ${remote_host}:${remote_port} --hostcmd "for p in \`pidof ascend_facedetectionapp\`; do { echo \"kill \$p\"; kill \$p; }; done")
     if [[ $? -ne 0 ]];then
         echo "ERROR: kill ${remote_host}:ascend_facedetectionapp running failed, please login to kill it manually."
+        return 1
     else
         echo "$iRet in ${remote_host}."
     fi
-    exit
+    return 0
 }
 
 trap 'kill_remote_running' 2 15
