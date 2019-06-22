@@ -117,7 +117,7 @@
 
     Face Detection应用执行后会处于持续运行状态，若要停止Face Detection应用程序，可执行如下操作。
 
-    以Mind Studio安装用户在_**/home/ascend/sample-facedetection**_目录下执行如下命令：
+    以Mind Studio安装用户在 _**/home/ascend/sample-facedetection**_ 目录下执行如下命令：
 
     **bash stop\_facedetectionapp.sh** _host\_ip_
 
