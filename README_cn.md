@@ -140,7 +140,7 @@
     ascend    7701  1615  0 14:21 pts/8    00:00:00 python3 presenterserver/presenter_server.py --app face_detection
     ```
 
-    如上所示_7701_即为face\_detection应用对应的Presenter Server服务的进程ID。
+    如上所示 _7701_ 即为face\_detection应用对应的Presenter Server服务的进程ID。
 
     若想停止此服务，执行如下命令：
 
