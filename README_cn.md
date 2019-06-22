@@ -106,7 +106,7 @@
     ![](doc/source/img/Presenter-Server界面.png "Presenter-Server界面")
 
     >![](doc/source/img/icon-note.gif) **说明：**   
-    >-   Face Detection的Presenter Server最多支持10路Channel同时显示，每个_presenter\_view\_app\_name_对应一路Channel。  
+    >-   Face Detection的Presenter Server最多支持10路Channel同时显示，每个 _presenter\_view\_app\_name_ 对应一路Channel。  
     >-   由于硬件的限制，每一路支持的最大帧率是20fps，受限于网络带宽的影响，帧率会自动适配为较低的帧率进行展示。  
 
 3.  单击右侧对应的View Name链接，比如上图的“video”，查看结果，对于检测到的人脸，会给出置信度的标注。
