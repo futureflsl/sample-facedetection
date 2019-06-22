@@ -144,7 +144,7 @@ Before running the application, obtain the source code package and configure the
 
     To stop the service, run the following command:
 
-    **kill -9** _7001_
+    **kill -9** _7701_
 
 
 ## Downloading Network Model and Dependency Code Library<a name="en-us_topic_0167089636_section193081336153717"></a>
