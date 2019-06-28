@@ -6,8 +6,8 @@ Developers can deploy the application on the Atlas 200 DK to collect camera data
 
 Before using an open source application, ensure that:
 
--   Mind Studio has been installed. For details, see  [Mind Studio Installation Guide](https://www.huawei.com/minisite/ascend/en/filedetail_1.html).
--   The Atlas 200 DK developer board has been connected to Mind Studio, the cross compiler has been installed, the SD card has been prepared, and basic information has been configured. For details, see  [Atlas 200 DK User Guide](https://www.huawei.com/minisite/ascend/en/filedetail_2.html).
+-   MindSpore Studio has been installed. For details, see  [MindSpore Studio Installation Guide](https://www.huawei.com/minisite/ascend/en/filedetail_1.html).
+-   The Atlas 200 DK developer board has been connected to MindSpore Studio, the cross compiler has been installed, the SD card has been prepared, and basic information has been configured. For details, see  [Atlas 200 DK User Guide](https://www.huawei.com/minisite/ascend/en/filedetail_2.html).
 
 ## Software Preparation<a name="en-us_topic_0167089636_section177411912193214"></a>
 
@@ -15,9 +15,9 @@ Before running the application, obtain the source code package and configure the
 
 1.  Obtain the source code package.
 
-    Download all the code in the sample-facedetection repository at  [https://github.com/Ascend/sample-facedetection](https://github.com/Ascend/sample-facedetection)  to any directory on Ubuntu Server where Mind Studio is located as the Mind Studio installation user, for example,  _/home/ascend/sample-facedetection/_.
+    Download all the code in the sample-facedetection repository at  [https://github.com/Ascend/sample-facedetection](https://github.com/Ascend/sample-facedetection)  to any directory on Ubuntu Server where MindSpore Studio is located as the MindSpore Studio installation user, for example,  _/home/ascend/sample-facedetection/_.
 
-2.  Log in to Ubuntu Server where Mind Studio is located as the Mind Studio installation user and set the environment variable  **DDK\_HOME**.
+2.  Log in to Ubuntu Server where MindSpore Studio is located as the MindSpore Studio installation user and set the environment variable  **DDK\_HOME**.
 
     **vim \~/.bashrc**
 
@@ -28,7 +28,7 @@ Before running the application, obtain the source code package and configure the
     **export LD\_LIBRARY\_PATH=$DDK\_HOME/uihost/lib**
 
     >![](doc/source/img/icon-note.gif) **NOTE:**   
-    >-   **XXX**  indicates the Mind Studio installation user, and  **/home/XXX/tools**  indicates the default installation path of the DDK.  
+    >-   **XXX**  indicates the MindSpore Studio installation user, and  **/home/XXX/tools**  indicates the default installation path of the DDK.  
     >-   If the environment variables have been added, skip this step.  
 
     Enter  **:wq!**  to save and exit.
@@ -40,22 +40,22 @@ Before running the application, obtain the source code package and configure the
 
 ## Deployment<a name="en-us_topic_0167089636_section15718149133616"></a>
 
-1.  Access the root directory where the face detection application code is located as the Mind Studio installation user, for example,  _**/home/ascend/sample-facedetection**_.
+1.  Access the root directory where the face detection application code is located as the MindSpore Studio installation user, for example,  _**/home/ascend/sample-facedetection**_.
 2.  Run the deployment script to prepare the project environment, including compiling and deploying the ascenddk public library, downloading the network model, and configuring Presenter Server.
 
     **bash deploy.sh** _host\_ip_ _model\_mode_
 
     -   _host\_ip_: For the Atlas 200 DK developer board, this parameter indicates the IP address of the developer board.
     -   _model\_mode_  indicates the deployment mode of the model file. The default setting is  **internet**.
-        -   **local**: If the Ubuntu system where Mind Studio is located is not connected to the network, use the local mode. In this case, download the network model file and the dependent common code library to the  **sample-facedetection/script**  directory by referring to the  [Downloading Network Model and Dependency Code Library](#en-us_topic_0167089636_section193081336153717).
-        -   **internet**: Indicates the online deployment mode. If the Ubuntu system where Mind Studio is located is connected to the network, use the Internet mode. In this case, download the model file and  dependency code library online.
+        -   **local**: If the Ubuntu system where MindSpore Studio is located is not connected to the network, use the local mode. In this case, download the network model file and the dependent common code library to the  **sample-facedetection/script**  directory by referring to the  [Downloading Network Model and Dependency Code Library](#en-us_topic_0167089636_section193081336153717).
+        -   **internet**: Indicates the online deployment mode. If the Ubuntu system where MindSpore Studio is located is connected to the network, use the Internet mode. In this case, download the model file and  dependency code library online.
 
 
     Example command:
 
     **bash deploy.sh 192.168.1.2 internet**
 
-    When the message  **Please choose one to show the presenter in browser\(default: 127.0.0.1\):**  is displayed, enter the IP address used for accessing the Presenter Server service in the browser. Generally, the IP address is the IP address for accessing the Mind Studio service.
+    When the message  **Please choose one to show the presenter in browser\(default: 127.0.0.1\):**  is displayed, enter the IP address used for accessing the Presenter Server service in the browser. Generally, the IP address is the IP address for accessing the MindSpore Studio service.
 
     Select the IP address used by the browser to access the Presenter Server service in  **Current environment valid ip list**, as shown in  [Figure 1](#en-us_topic_0167089636_fig184321447181017).
 
@@ -92,7 +92,7 @@ Before running the application, obtain the source code package and configure the
 
     -   _host\_ip_: For the Atlas 200 DK developer board, this parameter indicates the IP address of the developer board.
     -   _presenter\_view\_app\_name_: Indicates  **View Name**  displayed on the Presenter Server page, which is user-defined.
-    -   _camera\_channel\_name_: Indicates the channel to which a camera belongs. The value can be  **Channel-1**  or  **Channel-2**. For details, see  [Atlas 200 DK User Guide](https://www.huawei.com/minisite/ascend/en/filedetail_2.html).
+    -   _camera\_channel\_name_: Indicates the channel to which a camera belongs. The value can be  **Channel-1**  or  **Channel-2**. For details, see  **View the Channel to Which a Camera Belongs** of [Atlas 200 DK User Guide](https://www.huawei.com/minisite/ascend/en/filedetail_2.html).
 
     Example command:
 
@@ -117,7 +117,7 @@ Before running the application, obtain the source code package and configure the
 
     The face detection application is running continually after being executed. To stop it, perform the following operation:
 
-    Run the following command in the  _**/home/ascend/sample-facedetection**_  directory as the Mind Studio installation user:
+    Run the following command in the  _**/home/ascend/sample-facedetection**_  directory as the MindSpore Studio installation user:
 
     **bash stop\_facedetectionapp.sh** _host\_ip_
 
@@ -131,7 +131,7 @@ Before running the application, obtain the source code package and configure the
 
     The Presenter Server service is always in the running state after being started. To stop the Presenter Server service of the face detection application, perform the following operations:
 
-    Run the following command to check the process of the Presenter Server service corresponding to the face detection application as the Mind Studio installation user:
+    Run the following command to check the process of the Presenter Server service corresponding to the face detection application as the MindSpore Studio installation user:
 
     **ps -ef | grep presenter | grep face\_detection**
 
