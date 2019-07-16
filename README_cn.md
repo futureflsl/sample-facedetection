@@ -41,7 +41,7 @@
 ## 部署<a name="zh-cn_topic_0167071573_section7994174585917"></a>
 
 1.  以MindSpore Studio安装用户进入facedetectionapp应用代码所在根目录，如/home/ascend/sample-facedetection。
-2.  <a name="zh-cn_topic_0167071573_li08019112542"></a>执行部署脚本，进行工程环境准备，包括ascenddk公共库的编译与部署、网络模型的下载、Presenter Server服务器的配置等操作。
+2.  <a name="zh-cn_topic_0167071573_li08019112542"></a>执行部署脚本，进行工程环境准备，包括ascenddk公共库的编译与部署、网络模型的下载、Presenter Server服务器的配置等操作，其中Presenter Server用于接收Application发送过来的数据并通过浏览器进行结果展示。
 
     **bash deploy.sh** _host\_ip_ _model\_mode_
 
@@ -214,8 +214,8 @@
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0167071573_p133561244131620"><a name="zh-cn_topic_0167071573_p133561244131620"></a><a name="zh-cn_topic_0167071573_p133561244131620"></a>与Presenter Server进行交互的API接口。</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0167071573_p19356844151612"><a name="zh-cn_topic_0167071573_p19356844151612"></a><a name="zh-cn_topic_0167071573_p19356844151612"></a><a href="https://github.com/Ascend/sdk-presenter/tree/master/presenteragent" target="_blank" rel="noopener noreferrer">https://github.com/Ascend/sdk-presenter/tree/master/presenteragent</a></p>
-    <p id="zh-cn_topic_0167071573_p83561244101613"><a name="zh-cn_topic_0167071573_p83561244101613"></a><a name="zh-cn_topic_0167071573_p83561244101613"></a>下载后请保持文件夹名称为presenteragent。</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0167071573_p19356844151612"><a name="zh-cn_topic_0167071573_p19356844151612"></a><a name="zh-cn_topic_0167071573_p19356844151612"></a><a href="https://github.com/Ascend/sdk-presenter/tree/master/presenteragent" target="_blank" rel="noopener noreferrer">https://github.com/Ascend/sdk-presenter/tree/master/</a></p>
+    <p id="zh-cn_topic_0167071573_p83561244101613"><a name="zh-cn_topic_0167071573_p83561244101613"></a><a name="zh-cn_topic_0167071573_p83561244101613"></a>请获取此路径下的presenteragent文件夹，下载后请保持文件夹名称为presenteragent。</p>
     </td>
     </tr>
     <tr id="zh-cn_topic_0167071573_row16356944181617"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0167071573_p1935684461616"><a name="zh-cn_topic_0167071573_p1935684461616"></a><a name="zh-cn_topic_0167071573_p1935684461616"></a>tornado (5.1.0)</p>
@@ -224,7 +224,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0167071573_p3356144401619"><a name="zh-cn_topic_0167071573_p3356144401619"></a><a name="zh-cn_topic_0167071573_p3356144401619"></a>Presenter Server依赖的Python库</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0167071573_p5356114415163"><a name="zh-cn_topic_0167071573_p5356114415163"></a><a name="zh-cn_topic_0167071573_p5356114415163"></a>请自行搜索相关源进行安装。</p>
+    <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0167071573_p5356114415163"><a name="zh-cn_topic_0167071573_p5356114415163"></a><a name="zh-cn_topic_0167071573_p5356114415163"></a>可以在python官网 https://pypi.org/ 上搜索相关包进行安装。若使用pip3 install命令在线下载，可以使用如下命令指定相关版本进行下载，例如：</p><p>pip3 install tornado==5.1.0  -i  _指定库的安装源_  --trusted-host  _安装源的主机名_</p>
     </td>
     </tr>
     </tbody>
