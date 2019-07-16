@@ -91,7 +91,7 @@
     **bash run\_facedetectionapp.sh** _host\_ip_ _presenter\_view\_app\_name  camera\_channel\_name_   &
 
     -   _host\_ip_ ：对于Atlas 200 DK开发者板，即为开发者板的IP地址。
-    -   _presenter\_view\_app\_name_：用户自定义的在PresenterServer界面展示的View Name。
+    -   _presenter\_view\_app\_name_：用户自定义的在Presente Server界面展示的View Name，此View Name需要在Presenter Server界面保持唯一。
     -   _camera\_channel\_name_：摄像头所属Channel，取值为“Channel-1“或者“Channel-2“，查询摄像头所属Channel的方法请参考[Atlas 200 DK使用指南](https://www.huawei.com/minisite/ascend/cn/filedetail_2.html)中的“常用操作 > 如何查询摄像头所属Channel”。
 
     命令示例：
