@@ -87,7 +87,7 @@ function prepare()
         #done
         download_prepare_model_script
         if [ $? -ne 0 ];then
-            #return 1
+            return 1
         fi
         bash ${script_path}/download_model.sh ${tools_version} ${model_names}
         
