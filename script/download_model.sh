@@ -23,34 +23,11 @@ script_path="$( cd "$(dirname "$0")" ; pwd -P )"
 
 tools_version=$1
 
-#function parse_download_branch()
-#{
-    #echo "parse download_branch for ${tools_version}..."
-    #rm -rf ${script_path}/get_download_branch.sh
-    #rm -rf ${script_path}/branch_desc.txt
-    
-    #wget -O ${script_path}/get_download_branch.sh "https://raw.githubusercontent.com/Ascend/models/master/get_download_branch.sh" --no-check-certificate --quiet
-    #if [ $? -ne 0 ];then
-        #echo "ERROR: download failed, please check https://raw.githubusercontent.com/Ascend/models/master/get_download_branch.sh connetction."
-        #rm -rf ${script_path}/get_download_branch.sh
-        #rm -rf ${script_path}/branch_desc.txt
-        #return 1
-    #fi
-    
-    #download_branch=`/bin/bash ${script_path}/get_download_branch.sh ${tools_version}`
-    #if [[ ${download_branch} == "master" ]];then
-        #echo -e "\033[33mDownload models from default branch ${download_branch}, no special branch definition in github:Ascend/models/branch_desc.txt for ${tools_version}.\033[0m"
-    #else
-        #echo -e "\033[33mDownload models from special branch ${download_branch}, special branch definition in github:Ascend/models/branch_desc.txt for ${tools_version}\033[0m"
-    #fi
-
-    #return 0
-#}
-
 function download()
 {
     model_name=$1
     model_remote_path=$2
+    model_shape=`head -1 ${script_path}/shape_${model_name}`
     rm -rf ${script_path}/${model_name}_${tools_version}.om.ing
 
     if [ ! -f "${script_path}/${model_name}_${tools_version}.om" ];then
@@ -58,7 +35,7 @@ function download()
 	download_url_prototxt="https://obs-model-ascend.obs.cn-east-2.myhuaweicloud.com/${model_name}/${model_name}.prototxt"
         wget -O ${script_path}/${model_name}_${tools_version}.caffemodel ${download_url_caffemodel} --no-check-certificate
 	wget -O ${script_path}/${model_name}_${tools_version}.prototxt ${download_url_prototxt} --no-check-certificate
-	export SLOG_PRINT_TO_STDOUT=1 && export PATH=${PATH}:${DDK_HOME}/uihost/toolchains/ccec-linux/bin/ && export LD_LIBRARY_PATH=${DDK_HOME}/uihost/lib/ && export TVM_AICPU_LIBRARY_PATH=${DDK_HOME}/uihost/lib/:${DDK_HOME}/uihost/toolchains/ccec-linux/aicpu_lib && export TVM_AICPU_INCLUDE_PATH=${DDK_HOME}/include/inc/tensor_engine && export PYTHONPATH=${DDK_HOME}/site-packages && export TVM_AICPU_OS_SYSROOT=/usr/aarch64-linux-gnu && ${DDK_HOME}/uihost/bin/omg --output="${script_path}/${model_name}_${tools_version}" --check_report=${script_path}/face_detection_result.json --plugin_path= --model="${script_path}/${model_name}_${tools_version}.prototxt" --framework=0 --ddk_version=${tools_version} --weight="${script_path}/${model_name}_${tools_version}.caffemodel" --input_shape="data:1,3,300,300" --insert_op_conf=${script_path}/aipp_${model_name}.cfg --op_name_map=${script_path}/reassign_operators_${model_name}
+	export SLOG_PRINT_TO_STDOUT=1 && export PATH=${PATH}:${DDK_HOME}/uihost/toolchains/ccec-linux/bin/ && export LD_LIBRARY_PATH=${DDK_HOME}/uihost/lib/ && export TVM_AICPU_LIBRARY_PATH=${DDK_HOME}/uihost/lib/:${DDK_HOME}/uihost/toolchains/ccec-linux/aicpu_lib && export TVM_AICPU_INCLUDE_PATH=${DDK_HOME}/include/inc/tensor_engine && export PYTHONPATH=${DDK_HOME}/site-packages && export TVM_AICPU_OS_SYSROOT=/usr/aarch64-linux-gnu && ${DDK_HOME}/uihost/bin/omg --output="${script_path}/${model_name}_${tools_version}" --check_report=${script_path}/face_detection_result.json --plugin_path= --model="${script_path}/${model_name}_${tools_version}.prototxt" --framework=0 --ddk_version=${tools_version} --weight="${script_path}/${model_name}_${tools_version}.caffemodel" --input_shape=${model_shape} --insert_op_conf=${script_path}/aipp_${model_name}.cfg --op_name_map=${script_path}/reassign_operators
         if [ $? -ne 0 ];then
             echo "ERROR: download failed, please check ${download_url} connetction."
             rm -rf ${script_path}/${model_name}_${tools_version}.caffemodel
