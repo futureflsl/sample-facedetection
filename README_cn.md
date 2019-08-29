@@ -39,9 +39,7 @@
     **bash deploy.sh** _host\_ip_ _model\_mode_
 
     -   _host\_ip_：Atlas 200 DK开发者板的IP地址。
-    -   model\_mode代表模型文件及依赖软件的部署方式，默认为internet。
-        -   local：若Ubuntu系统未连接网络，请使用local模式，执行此命令前，需要将网络模型文件以及依赖的公共代码库下载到“sample-facedetection/script“目录下。
-        -   internet：若Ubuntu系统已连接网络，请使用internet模式，在线下载模型文件及依赖代码库。
+      
 
 ## 运行
 -   步骤 1 运行sample-facedetection-python程序。
