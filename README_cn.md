@@ -12,10 +12,10 @@
 ## 环境配置
 -   步骤 1 UIHost端配置相关环境。
 
-在UIHost端root用户下，进入sample-facedetection-python目录下的script目录执行bash install_uihost.sh即可完成所有配置。
+    在UIHost端root用户下，进入sample-facedetection-python目录下的script目录执行bash install_uihost.sh即可完成所有配置。
 -   步骤 2 获取源码包。
 
-将https://github.com/Ascend/sample-facedetection-python仓中的代码下载至所在Ubuntu服务器的任意目录，例如代码存放路径为：$HOME/ascend/sample-facedetection-python。
+    将https://github.com/Ascend/sample-facedetection-python仓中的代码下载至所在Ubuntu服务器的任意目录，例如代码存放路径为：$HOME/ascend/sample-facedetection-python。
 
 
 ## 部署<a name="zh-cn_topic_0167071573_section7994174585917"></a>
