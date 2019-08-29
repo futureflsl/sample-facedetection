@@ -41,11 +41,6 @@
 	**图 1**  Presenter Server进程启动  
 	使用上图提示的URL登录Presenter Server，仅支持Chrome浏览器。IP地址为图中输入的IP地址，端口号默为7007，如下图所示，表示Presenter Server启动成功。
 
-	**图 2**  主页显示
-    **bash deploy.sh** _host\_ip_ _model\_mode_
-
-    -   _host\_ip_：Atlas 200 DK开发者板的IP地址。
-      
 
 ## 运行
 -   步骤 1 运行sample-facedetection-python程序。
