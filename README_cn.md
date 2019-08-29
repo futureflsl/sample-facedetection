@@ -21,13 +21,19 @@
 ## 部署<a name="zh-cn_topic_0167071573_section7994174585917"></a>
 	部署操作全部在UIHost端操作
 -   步骤 1 以root用户在终端切换到sample-facedetection-python的script目录，然后执行下列指令。
+
 	在终端键入bash deploy.sh按照提示输入两次密码即可完成deploy操作
+	
 	在终端键入bash install_host.sh自动完成环境依赖安装
-    在终端键入bash network_uihost.sh USB网卡名称 外网地址 自动完成UIHost联网操作
+	
+	在终端键入bash network_uihost.sh USB网卡名称 外网地址 自动完成UIHost联网操作
+	
 	例如：如下图，则应该写成bash network_uihost.sh ens33 ens35u1
 
 	在终端键入./network_host.sh进行Host更新与安装依赖
+	
 -   步骤 2 启动Presenter Server。
+
 	以root用户在终端切换到sample-facedetection-python目录下script目录执行Face Detection应用的Presenter Server主程序。
 	
 	bash run_presenterserv.sh
