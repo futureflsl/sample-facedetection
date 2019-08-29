@@ -10,22 +10,22 @@
 -   开发板完成相关Python环境和系统必要配置。
 
 ## 环境配置
--   步骤 1UIHost端配置相关环境
+-   步骤 1 UIHost端配置相关环境
 在UIHost端root用户下，进入sample-facedetection-python目录下的script目录执行bash install_uihost.sh即可完成所有配置。
--   步骤 2获取源码包。
+-   步骤 2 获取源码包。
 将https://github.com/Ascend/sample-facedetection-python仓中的代码下载至所在Ubuntu服务器的任意目录，例如代码存放路径为：$HOME/ascend/sample-facedetection-python。
 
 
 ## 部署<a name="zh-cn_topic_0167071573_section7994174585917"></a>
 	部署操作全部在UIHost端操作
--   步骤 1以root用户在终端切换到sample-facedetection-python的script目录，然后执行下列指令。
+-   步骤 1 以root用户在终端切换到sample-facedetection-python的script目录，然后执行下列指令。
 	在终端键入bash deploy.sh按照提示输入两次密码即可完成deploy操作
 	在终端键入bash install_host.sh自动完成环境依赖安装
     在终端键入bash network_uihost.sh USB网卡名称 外网地址 自动完成UIHost联网操作
 	例如：如下图，则应该写成bash network_uihost.sh ens33 ens35u1
 
 	在终端键入./network_host.sh进行Host更新与安装依赖
--   步骤 2启动Presenter Server。
+-   步骤 2 启动Presenter Server。
 	以root用户在终端切换到sample-facedetection-python目录下script目录执行Face Detection应用的Presenter Server主程序。
 	bash run_presenterserv.sh
 
@@ -41,10 +41,10 @@
         -   internet：若MindSpore Studio所在Ubuntu系统已连接网络，请使用internet模式，在线下载模型文件及依赖代码库。
 
 ## 运行
--   步骤 1运行sample-facedetection-python程序。
+-   步骤 1 运行sample-facedetection-python程序。
 	以root用户在UIHost端的终端切换到sample-facedetection-python/script运行应用程序。
 	bash run.sh
--   步骤 2在UIHost端使用启动Presenter Server服务时提示的URL登录 Presenter Server 网站，详细可参考部署的步骤2。
+-   步骤 2 在UIHost端使用启动Presenter Server服务时提示的URL登录 Presenter Server 网站，详细可参考部署的步骤2。
 	等待Presenter Agent传输数据给服务端，单击“Refresh”刷新，当有数据时相应的Channel 的Status变成绿色，如图3.2所示。
 
 	**图 3**  Presenter Sever界面
@@ -57,10 +57,9 @@
 ## 后续处理
 
 -   **停止Face Detection应用**
-	Face Detection应用执行后会处于持续运行状态，若要停止sample-facedetection-python应用程序，在到UIHost端以root用户切换单sample-facedetection-python/script目录下执行终端命令
+    Face Detection应用执行后会处于持续运行状态，若要停止sample-facedetection-python应用程序，在到UIHost端以root用户切换单sample-facedetection-python/script目录下执行终端命令
 	bash stop.sh
 
 -   **停止Presenter Server服务**
-
     Face Detection的Presenter Server执行后会处于持续运行状态，若要停止Presenter Server应用程序，在到UIHost端以root用户切换单sample-facedetection-python/script目录下执行终端命令
                      bash stop_presenterserver.sh
