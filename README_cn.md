@@ -38,8 +38,8 @@
 
     -   _host\_ip_：Atlas 200 DK开发者板的IP地址。
     -   model\_mode代表模型文件及依赖软件的部署方式，默认为internet。
-        -   local：若MindSpore Studio所在Ubuntu系统未连接网络，请使用local模式，执行此命令前，需要参考[网络模型及公共代码库下载](#zh-cn_topic_0167071573_section4995103618210)将网络模型文件以及依赖的公共代码库下载到“sample-facedetection/script“目录下。
-        -   internet：若MindSpore Studio所在Ubuntu系统已连接网络，请使用internet模式，在线下载模型文件及依赖代码库。
+        -   local：若Ubuntu系统未连接网络，请使用local模式，执行此命令前，需要将网络模型文件以及依赖的公共代码库下载到“sample-facedetection/script“目录下。
+        -   internet：若Ubuntu系统已连接网络，请使用internet模式，在线下载模型文件及依赖代码库。
 
 ## 运行
 -   步骤 1 运行sample-facedetection-python程序。
@@ -60,9 +60,11 @@
 -   **停止Face Detection应用**
 
     Face Detection应用执行后会处于持续运行状态，若要停止sample-facedetection-python应用程序，在到UIHost端以root用户切换单sample-facedetection-python/script目录下执行终端命令
+    
 	bash stop.sh
 
 -   **停止Presenter Server服务**
 
     Face Detection的Presenter Server执行后会处于持续运行状态，若要停止Presenter Server应用程序，在到UIHost端以root用户切换单sample-facedetection-python/script目录下执行终端命令
+    
                      bash stop_presenterserver.sh
