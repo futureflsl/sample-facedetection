@@ -27,6 +27,7 @@
 	在终端键入./network_host.sh进行Host更新与安装依赖
 -   步骤 2 启动Presenter Server。
 	以root用户在终端切换到sample-facedetection-python目录下script目录执行Face Detection应用的Presenter Server主程序。
+	
 	bash run_presenterserv.sh
 
 	**图 1**  Presenter Server进程启动  
@@ -57,9 +58,11 @@
 ## 后续处理
 
 -   **停止Face Detection应用**
+
     Face Detection应用执行后会处于持续运行状态，若要停止sample-facedetection-python应用程序，在到UIHost端以root用户切换单sample-facedetection-python/script目录下执行终端命令
 	bash stop.sh
 
 -   **停止Presenter Server服务**
+
     Face Detection的Presenter Server执行后会处于持续运行状态，若要停止Presenter Server应用程序，在到UIHost端以root用户切换单sample-facedetection-python/script目录下执行终端命令
                      bash stop_presenterserver.sh
